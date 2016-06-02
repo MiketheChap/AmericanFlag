@@ -1,0 +1,2 @@
+# AmericanFlag
+For those interested in cobbling together an American Flag, using whatever media, you may need some help with getting dimensions right. It's NOT as easy as it looks. And the terms used to describe the flag can be very unfamiliar. SO, I wanted to make this easier. I'm learning the R Language right now and thought I'd start by writing it in that language. Then, hopefully, I'll port it to PHP, Python or some other language to make it more widely available.  
