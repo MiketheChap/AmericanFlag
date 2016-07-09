@@ -17,9 +17,9 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 flag <- function(){
-  writeLines(c("This program calculates the dimensions of the American Flag using two questions. \n", "We'll ask you if you want FEET or METERS in a second", "The code is by Mike Davis "))
+  writeLines(c("This program calculates the dimensions of the American Flag using two questions. \n", "For more about the dimension definitions (e.g. A, B, C, D) go to Montney.com/flag/proportions.htm. \n", "We'll ask you if you want FEET or METERS in a second"))
   # dialogues to choose size then feet or meters (using readline)
-  x <- readline(prompt="Enter your desired hoist (top of stripe facing skyward to bottom of bottom stripe): ")
+  x <- readline(prompt="Enter your desired hoist (A: top of stripe facing skyward to bottom of bottom stripe): ")
   y <- readline(prompt="Enter 1 for dimensions in Feet OR 2 for dimensions in Metric: ")
      if (y == 1){
        chosen.dimension <- "Feet"
@@ -29,8 +29,8 @@ flag <- function(){
        alternate.dimension <- "Feet"
      }
   # convert size input and measure to integer
-  x <- as.integer(x)
-  y <- as.integer(y)
+  x <- as.double(x)
+  y <- as.double(y)
     if (y == 1){
       x <- round(x, digits=2)
     } else {
@@ -67,15 +67,14 @@ flag <- function(){
   writeLines(c("Now about the stripes:"))
   writeLines(c("The order of the stripes are (starting with one nearest the sky):"))
   writeLines(c("    R, W, R, W, R, W, R, W (starts the long stripes), R, W, R, W, R"))
-  cat(c("    The width of the Stripes are this wide: ", stripes.width, chosen.dimension, "\n"))
-  cat(c("    The 4 Short Red Stripes are this long: ", short.reds, chosen.dimension, "\n"))
-  cat(c("    The 3 Short White Stripes are this long: ", short.whites, chosen.dimension, "\n"))
-  cat(c("    The 3 Long Red Stripes are this long: ", long.reds, chosen.dimension, "\n"))
-  cat(c("    The 3 Long White Stripes are this long: ", long.whites, chosen.dimension, "\n"))
+  cat(c("    The width of the Stripes (L) are this wide: ", stripes.width, chosen.dimension, "\n"))
+  cat(c("    The 4 Short Red Stripes (F) are this long: ", short.reds, chosen.dimension, "\n"))
+  cat(c("    The 3 Short White Stripes (E) are this long: ", short.whites, chosen.dimension, "\n"))
+  cat(c("    The 3 Long Red Stripes (H) are this long: ", long.reds, chosen.dimension, "\n"))
+  cat(c("    The 3 Long White Stripes (H) are this long: ", long.whites, chosen.dimension, "\n"))
   writeLines(c("\n"))
   writeLines(c("Concerning the stars..."))
-  cat(c("    The distance between the centers of the stars is: ", star.distance, chosen.dimension, "\n"))
+  cat(c("    The distance between the centers of the stars(side-to-side) is: ", star.distance, chosen.dimension, "\n"))
   cat(c("You will need this many total RED LED lights:", total.reds, "feet"," or ", total.reds.metric, "Meters", "\n" ))
   cat(c("You will need this many total WHITE LED lights:", total.whites, "Feet"," or ", total.whites.metric, "Meters", "\n"))
-  
 }
