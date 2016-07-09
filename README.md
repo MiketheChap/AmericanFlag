@@ -1,2 +1,2 @@
-# AmericanFlag Dimensions
+# American Flag Dimensions Calculator: Design your own flag AND get the dimensions right.
 For those interested in cobbling together an American Flag, using whatever media, you may need some help with getting dimensions right. It's NOT as easy as it looks. And the terms used to describe the flag can be very unfamiliar. SO, I wanted to make this easier. I'm learning the R Language right now and thought I'd start by writing it in that language. Then, hopefully, I'll port it to PHP, Python or some other language to make it more widely available. For more information about the dimensions of the American Flag, one really good place to start is the web Montney Family web page: http://www.montney.com/flag/proportions.htm . 
