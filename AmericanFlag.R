@@ -17,25 +17,25 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 flag <- function(){
-  writeLines(c("This program calculates the dimensions of the American Flag using two questions. \n", "For more about the dimension definitions (e.g. A, B, C, D) go to Montney.com/flag/proportions.htm. \n", "We'll ask you if you want FEET or METERS in a second"))
+  writeLines(c("This program imagines you want to create an American Flag. \n", "We'll ask your desired Hoist (top of stripe closest to the sky to the bottom of the bottom stripe) in FEET.\n", "Then, we'll ask if you want the dimensions calculated in Feet or Meters. \n", "The terms used to describe flag dimensions are counter-intuitive so please read about the dimension definitions (e.g. A, B, C, D) at Montney.com/flag/proportions.htm. \n", "We'll ask you if you want FEET or METERS in a second"))
   # dialogues to choose size then feet or meters (using readline)
-  x <- readline(prompt="Enter your desired hoist (A: top of stripe facing skyward to bottom of bottom stripe): ")
+  x <- readline(prompt="Enter your desired hoist in ***FEET*** (A: top of stripe facing skyward to bottom of bottom stripe): ")
   y <- readline(prompt="Enter 1 for dimensions in Feet OR 2 for dimensions in Metric: ")
-     if (y == 1){
-       chosen.dimension <- "Feet"
-       alternate.dimension <- "Meters"
-     }else{
-       chosen.dimension <- "Meters"
-       alternate.dimension <- "Feet"
-     }
+  if (y == 1){
+    chosen.dimension <- "Feet"
+    alternate.dimension <- "Meters"
+  }else{
+    chosen.dimension <- "Meters"
+    alternate.dimension <- "Feet"
+  }
   # convert size input and measure to integer
   x <- as.double(x)
   y <- as.double(y)
-    if (y == 1){
-      x <- round(x, digits=2)
-    } else {
-      x <- round(x / 3.28, digits=2)
-    }
+  if (y == 1){
+    x <- round(x, digits=2)
+  } else {
+    x <- round(x / 3.28, digits=2)
+  }
   # x = size of flag (top of stripe nearest the sky to bottom of stripe nearest the ground)
   # next line is the size of the fly
   fly <- round(x * 1.9, digits=2)
@@ -61,8 +61,10 @@ flag <- function(){
   # e.g. if they chose ft.  for init. dimension, give it metric, too.
   cat("****EVERY DIMENSION below is in:", chosen.dimension, "**** \n")
   writeLines(c("Here's the overall dimensions:"))
-  cat(c("    The Hoist of your flag (A: top of stripes to bottom of stripes) is: ", x, chosen.dimension, "\n"))
+  cat(c("    The Hoist of your Flag (A: top of stripes to bottom of stripes) is: ", x, chosen.dimension, "\n"))
   cat(c("    The Fly of your flag (B: edge nearest pole to edge farthest away) is: ", fly, chosen.dimension, "\n"))
+  cat(c("    The Hoist of your Union (C: bottom of the star field to the top) is: ", hoist.union, chosen.dimension, "\n"))
+  cat(c("    The Fly of your Union (D: far left of the star field to the far right) is: ", fly.union, chosen.dimension, "\n"))
   writeLines("\n")
   writeLines(c("Now about the stripes:"))
   writeLines(c("The order of the stripes are (starting with one nearest the sky):"))
